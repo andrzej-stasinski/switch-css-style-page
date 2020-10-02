@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Switch 1</title>
+	<link rel="stylesheet" href="dark.css" id="pagestyle">
+	<style>
+	html {
+		background-color: #fff;
+	}
+	body {
+		margin: 10px auto;padding: 20px;
+		width: 700px;
+
+	}
+	#vid {
+		width: 200px;height: 100px;background-color: red;
+	}
+	img#lightSwitch {
+		cursor: pointer;
+	}
+
+	</style>
+
+	<script>
+	var mode = "default";
+	function swap() {
+		var pagestyle = document.getElementById('pagestyle');
+		var lightSwitch = document.getElementById('lightSwitch');
+		if(mode == "default") {
+			pagestyle.setAttribute('href', 'default.css');
+			lightSwitch.src = "Switch-on.jpg";
+			lightSwitch.title = "Turn the lights back on";
+			mode = "dark";
+		} else {
+			pagestyle.setAttribute('href', 'dark.css');
+			lightSwitch.src = "Switch-off.jpg";
+			mode = "default";	
+			lightSwitch.title = "Turn the lights off";		
+		}		
+	}
+
+
+
+	</script>	
+</head>
+<body>
+	<h3>24.1 Switch light|dark page - without background url</h3>
+
+	<img src="Switch-off.jpg" alt="switch" id="lightSwitch" onmousedown="swap();" width="40" height="110" title="You can switch the light">
+
+
+</body>
+</html>

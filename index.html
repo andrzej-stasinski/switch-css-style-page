@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>switch styles</title>
+	<link rel="stylesheet" href="dark.css" id="pagestyle">
+	<style>
+		html {
+			background-color: #fff;
+		}
+		body {
+			margin: 10px auto;padding: 20px;width: 800px;
+		}
+		#lightSwitch {cursor: pointer;}
+	</style>
+
+	
+</head>
+<body>
+	<h3>switch styles</h3>
+
+	<img src="switch1on.jpg" id="lightSwitch" width="90" height="30" title="You can switch the light">
+	<img src="switch2on.png" id="light2" width="89" height="45" title="You can switch the light">
+
+	<script>
+	var mode = "default";
+	var pagestyle = document.getElementById('pagestyle');
+	var light  = document.getElementById('lightSwitch');
+	var light2 = document.getElementById('light2');
+
+	function swap() {
+	
+		if(mode == "default") {
+			pagestyle.setAttribute('href', 'default.css');
+			light.src = "switch1off.jpg";
+			light.title = "Turn on the light";
+			mode = "dark";
+		} else {
+			pagestyle.setAttribute('href', 'dark.css');
+			light.src = "switch1on.jpg";
+			light.title = "Turn off the light";
+			mode = "default";		
+		}		
+	}
+
+	function swap2(on,off) {
+
+		if(mode == "default") {
+			pagestyle.setAttribute('href', 'default.css');
+			light2.src = on;
+			light2.title = "Turn on the light";
+			mode = "dark";
+		} else {
+			pagestyle.setAttribute('href', 'dark.css');
+			light2.src = off;
+			light2.title = "Turn off the light";
+			mode = "default";		
+		}		
+	}
+
+	window.onload = function() {
+
+		console.log('onload');
+		
+		console.log(light);
+		light.onclick = swap;
+
+		light2.onclick = function() {
+			swap2('switch2off.png','switch2on.png');
+		}
+	}
+	
+
+	</script>
+</body>
+</html>
