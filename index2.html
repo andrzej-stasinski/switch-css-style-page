@@ -30,12 +30,12 @@
 		var lightSwitch = document.getElementById('lightSwitch');
 		if(mode == "default") {
 			pagestyle.setAttribute('href', 'default.css');
-			lightSwitch.src = "switch2-on.png";
+			lightSwitch.src = "./img/switch2-on.png";
 			lightSwitch.title = "Turn the lights back on";
 			mode = "dark";
 		} else {
 			pagestyle.setAttribute('href', 'dark.css');
-			lightSwitch.src = "switch2-off.png";
+			lightSwitch.src = "./img/switch2-off.png";
 			mode = "default";	
 			lightSwitch.title = "Turn the lights off";		
 		}		
@@ -48,7 +48,7 @@
 <body>
 	<h3>24.1 Switch light|dark page - without background url</h3>
 
-	<img src="switch2-off.png" alt="switch" id="lightSwitch" onmousedown="swap();" title="You can switch the light">
+	<img src="./img/switch2-off.png" alt="switch" id="lightSwitch" onmousedown="swap();" title="You can switch the light">
 
 
 </body>

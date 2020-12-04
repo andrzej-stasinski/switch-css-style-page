@@ -19,8 +19,8 @@
 <body>
 	<h3>switch styles</h3>
 
-	<img src="switch1on.jpg" id="lightSwitch" width="90" height="30" title="You can switch the light">
-	<img src="switch2on.png" id="light2" width="89" height="45" title="You can switch the light">
+	<img src="./img/switch1on.jpg" id="lightSwitch" width="90" height="30" title="You can switch the light">
+	<img src="./img/switch2on.png" id="light2" width="89" height="45" title="You can switch the light">
 
 	<script>
 	var mode = "default";
@@ -32,12 +32,12 @@
 	
 		if(mode == "default") {
 			pagestyle.setAttribute('href', 'default.css');
-			light.src = "switch1off.jpg";
+			light.src = "./img/switch1off.jpg";
 			light.title = "Turn on the light";
 			mode = "dark";
 		} else {
 			pagestyle.setAttribute('href', 'dark.css');
-			light.src = "switch1on.jpg";
+			light.src = "./img/switch1on.jpg";
 			light.title = "Turn off the light";
 			mode = "default";		
 		}		
@@ -66,7 +66,7 @@
 		light.onclick = swap;
 
 		light2.onclick = function() {
-			swap2('switch2off.png','switch2on.png');
+			swap2('./img/switch2off.png','./img/switch2on.png');
 		}
 	}
 	
